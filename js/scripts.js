@@ -38,9 +38,9 @@ Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
 Pizza.prototype.showReceipt = function() {
   $(".myPizzaPrice").text(this.cost);
   $(".myPizzaSize").text(this.size);
-  if (this.toppings.length > 0) {
-    $(".numOfToppings").text(this.toppings.length + " topping");
-    $(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
+  if (this.meat.length > 0 || this.veg.length > 0) {
+    $(".numOfToppings").text(this.meat.length + this.veg.length + " topping");
+    //$(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
 
   }
 }
