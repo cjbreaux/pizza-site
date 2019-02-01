@@ -28,6 +28,8 @@ Pizza.prototype.showReceipt = function() {
   $(".myPizzaSize").text(this.size);
   if (this.toppings.length > 0) {
     $(".numOfToppings").text(this.toppings.length + " topping");
+    $(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
+
   }
 }
 

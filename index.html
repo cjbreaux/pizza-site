@@ -26,6 +26,27 @@
             <option value="Large">Large</option>
           </select>
         </div>
+        <div class="row">
+          <div class="col">
+          <p>Select your toppings: </p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="toppings" value="pepperoni">
+            <label class="form-check-label">Pepperoni</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="toppings" value="pickles">
+            <label class="form-check-label">Pickles</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="toppings" value="peppers">
+            <label class="form-check-label">Peppers</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="toppings" value="mushrooms">
+            <label class="form-check-label">Mushrooms</label>
+          </div>
+        </div>
+        <div class="col">
         <p>Select your toppings: </p>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="toppings" value="pepperoni">
@@ -43,13 +64,15 @@
           <input class="form-check-input" type="checkbox" name="toppings" value="mushrooms">
           <label class="form-check-label">Mushrooms</label>
         </div>
+      </div>
+      </div>
         <br>
         <button type="submit" name="submit" class="btn btn-danger">Submit Order</button>
       </form>
 
       <!-- display the receipt here -->
       <div class="receipt">
-        <p>Thank you for your order of a <span class="myPizzaSize"></span> <span class="numOfToppings"></span> pizza. Your total is $<span class="myPizzaPrice"></span>.</p>
+        <p>Thank you for your order of a <span class="myPizzaSize"></span> <span class="numOfToppings"></span> pizza<span class="myToppings"></span>. Your total is $<span class="myPizzaPrice"></span>.</p>
 
       </div>
 
