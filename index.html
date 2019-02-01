@@ -22,7 +22,7 @@
         Order Online
       </button>
       <form id="pizzaForm">
-        <!-- Modal -->
+        <!-- Modal to Select Pizza Size-->
         <div class="modal fade" id="modalSize" tabindex="-1">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -48,7 +48,7 @@
             </div>
           </div>
         </div>
-
+        <!-- Modal to Select Pizza Crust-->
         <div class="modal fade" id="modalCrust" tabindex="-1">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -70,6 +70,75 @@
                 </div>
               </div>
               <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modalMeat">Continue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal to Select Meat Toppings-->
+        <div class="modal fade" id="modalMeat" tabindex="-1">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalMeatTitle">Select your meat: </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="meat" value="pepperoni">
+                  <label class="form-check-label">Pepperoni</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="meat" value="ham">
+                  <label class="form-check-label">Ham</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="meat" value="sausage">
+                  <label class="form-check-label">Sausage</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="meat" value="bbq-chicken">
+                  <label class="form-check-label">BBQ Chicken</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modalVeg">Continue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal to Select Vegetable Toppings -->
+        <div class="modal fade" id="modalVeg" tabindex="-1">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalVegTitle">Select your vegetables: </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="veg" value="olives">
+                  <label class="form-check-label">Olives</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="veg" value="mushrooms">
+                  <label class="form-check-label">Mushrooms</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="veg" value="onions">
+                  <label class="form-check-label">Onions</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="veg" value="corn">
+                  <label class="form-check-label">Corn</label>
+                </div>
+              </div>
+              <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
               </div>
             </div>
@@ -78,64 +147,9 @@
 
 
 
-        <!-- <div class="form-group">
-          <label for="pizzaSize">Select your size: </label>
-          <select class="form-control" id="pizzaSize">
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-          </select>
-        </div> -->
-        <!-- <div class="form-group">
-          <label for="pizzaCrust">Select your crust: </label>
-          <select class="form-control" id="pizzaCrust">
-            <option value="Thin">Thin</option>
-            <option value="Regular">Regular</option>
-            <option value="Crispy">Crispy</option>
-            <option value="Deep-Dish">Deep-Dish</option>
-          </select>
-        </div> -->
+      
 
-        <div class="row">
-          <div class="col">
-          <p>Select your meat: </p>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="meat" value="pepperoni">
-            <label class="form-check-label">Pepperoni</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="meat" value="ham">
-            <label class="form-check-label">Ham</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="meat" value="sausage">
-            <label class="form-check-label">Sausage</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="meat" value="bbq-chicken">
-            <label class="form-check-label">BBQ Chicken</label>
-          </div>
-        </div>
-        <div class="col">
-        <p>Select your vegetables: </p>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="veg" value="olives">
-          <label class="form-check-label">Olives</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="veg" value="mushrooms">
-          <label class="form-check-label">Mushrooms</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="veg" value="onions">
-          <label class="form-check-label">Onions</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="veg" value="corn">
-          <label class="form-check-label">Corn</label>
-        </div>
-      </div>
-      </div>
+
         <br>
         <button type="submit" name="submit" class="btn btn-danger">Submit Order</button>
       </form>
