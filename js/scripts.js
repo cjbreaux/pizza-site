@@ -34,6 +34,16 @@ var pizza3 = new Pizza("medium",[]);
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(event){
     event.preventDefault();
-    alert("submit is working")
+    var inputSize = $("#pizzaSize option:selected").val();
+    console.log(inputSize);
+    var inputToppings = []; $("input:checkbox[name=toppings]:checked").each(function(){
+      inputToppings.push($(this).val());
+    });
+    console.log(inputToppings);
+
+   // $("input:checkbox[name=toppings]:checked").each(function(){
+   //    var inputToppings = $(this).val();
+   //    console.log(inputToppings); // to display later
+    // })
   })
 });
