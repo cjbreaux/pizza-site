@@ -17,24 +17,85 @@
     <div class="container">
       <h1 class="deisplay-1">Pizza My Heart</h1>
       <p>Welcome to Pizza My Heart Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSize">
+        Order Online
+      </button>
       <form id="pizzaForm">
-        <div class="form-group">
+        <!-- Modal -->
+        <div class="modal fade" id="modalSize" tabindex="-1">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalSizeTitle">Select your size: </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="pizzaSize"></label>
+                  <select class="form-control" id="pizzaSize">
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target ="#modalCrust">Continue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modalCrust" tabindex="-1">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCrustTitle">Select your crust: </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="pizzaCrust">Select your crust: </label>
+                  <select class="form-control" id="pizzaCrust">
+                    <option value="Thin">Thin</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Crispy">Crispy</option>
+                    <option value="Deep-Dish">Deep-Dish</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- <div class="form-group">
           <label for="pizzaSize">Select your size: </label>
           <select class="form-control" id="pizzaSize">
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
           </select>
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
           <label for="pizzaCrust">Select your crust: </label>
-          <select class="form-control" id="pizzaSize">
+          <select class="form-control" id="pizzaCrust">
             <option value="Thin">Thin</option>
             <option value="Regular">Regular</option>
             <option value="Crispy">Crispy</option>
             <option value="Deep-Dish">Deep-Dish</option>
           </select>
-        </div>
+        </div> -->
+
         <div class="row">
           <div class="col">
           <p>Select your meat: </p>
