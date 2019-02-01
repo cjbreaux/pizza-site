@@ -10,10 +10,10 @@ function Pizza(size,toppings) {
 //calculates the prize of a pizza
 Pizza.prototype.calculatePrice = function(size,toppings) {
   var price = 10;
-  if (this.size === "small") {
+  if (this.size === "Small") {
     price -= 3;
   }
-  if (this.size === "large") {
+  if (this.size === "Large") {
     price += 5;
   }
   for (var i=0; i<this.toppings.length; i++) {
@@ -23,12 +23,11 @@ Pizza.prototype.calculatePrice = function(size,toppings) {
   return price;
 }
 
-//for testing
-var pizza1 = new Pizza("small", ["pepperoni","pickles"]);
-var pizza2 = new Pizza("large", ["olives"]);
-var pizza3 = new Pizza("medium",[]);
+Pizza.prototype.showReceipt = function() {
+  $(".myPizzaPrice").text(this.cost);
+  $(".myPizzaSize").text(this.size);
 
-
+}
 
 //UI LOGIC//
 $(document).ready(function(){
@@ -42,7 +41,9 @@ $(document).ready(function(){
     console.log(inputToppings);
     var myPizza = new Pizza(inputSize,inputToppings);
     var myPizzaPrice = myPizza.calculatePrice();
-    $(".myPizzaPrice").text(myPizzaPrice);
+    myPizza.showReceipt();
+
+    //$(".myPizzaPrice").text(myPizzaPrice); simple way to show price
 
    // $("input:checkbox[name=toppings]:checked").each(function(){
    //    var inputToppings = $(this).val();
