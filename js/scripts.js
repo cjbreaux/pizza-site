@@ -27,3 +27,13 @@ Pizza.prototype.calculatePrice = function(size,toppings) {
 var pizza1 = new Pizza("small", ["pepperoni","pickles"]);
 var pizza2 = new Pizza("large", ["olives"]);
 var pizza3 = new Pizza("medium",[]);
+
+
+
+//UI LOGIC//
+$(document).ready(function(){
+  $("form#pizzaForm").submit(function(event){
+    event.preventDefault();
+    alert("submit is working")
+  })
+});
