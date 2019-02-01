@@ -26,7 +26,9 @@ Pizza.prototype.calculatePrice = function(size,toppings) {
 Pizza.prototype.showReceipt = function() {
   $(".myPizzaPrice").text(this.cost);
   $(".myPizzaSize").text(this.size);
-
+  if (this.toppings.length > 0) {
+    $(".numOfToppings").text(this.toppings.length + " topping");
+  }
 }
 
 //UI LOGIC//
