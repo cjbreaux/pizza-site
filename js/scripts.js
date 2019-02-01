@@ -1,5 +1,15 @@
 //BUSINESS LOGIC//
 
+//Ordering Logic to keep track of multiple pizzas
+function Order() {
+  this.pizzas = []
+}
+
+Order.prototype.addPizza = function(pizza) {
+  this.pizzas.push(pizza);
+}
+
+//Pizza creation logic
 function Pizza(size,crust,meat,veg) {
   this.size = size
   this.crust = crust
@@ -36,14 +46,18 @@ Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
 }
 
 Pizza.prototype.showReceipt = function() {
+
   $(".myPizzaPrice").text(this.cost);
   $(".myPizzaSize").text(this.size);
+
+
+
   if (this.meat.length > 0 || this.veg.length > 0) {
     $(".numOfToppings").text(this.meat.length + this.veg.length + " topping");
-    //$(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
-
+    // $(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
   }
 }
+
 
 //for testing purposes
 // var pizza1 = new Pizza ("Large","Thin",["Ham","Sausage","Bacon"],[]);
