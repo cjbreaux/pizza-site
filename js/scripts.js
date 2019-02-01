@@ -1,14 +1,16 @@
 //BUSINESS LOGIC//
 
-function Pizza(size,toppings) {
+function Pizza(size,crust,meat,veg) {
   this.size = size
-  this.toppings = toppings
+  this.crust = crust
+  this.meat = meat
+  this.veg = veg
 
 
 }
 
 //calculates the prize of a pizza
-Pizza.prototype.calculatePrice = function(size,toppings) {
+Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
   var price = 10;
   if (this.size === "Small") {
     price -= 3;
@@ -16,7 +18,17 @@ Pizza.prototype.calculatePrice = function(size,toppings) {
   if (this.size === "Large") {
     price += 5;
   }
-  for (var i=0; i<this.toppings.length; i++) {
+
+  if (this.crust === "Crispy" || this.crust === "Thin"){
+    price += 2
+    } else if (this.crust === "Deep-Dish") {
+      price += 7
+      }
+
+  for (var i=0; i<this.meat.length; i++) {
+    price += 2;
+  }
+  for (var i=0; i<this.veg.length; i++) {
     price += 1;
   }
   this.cost = price; //adds Property to Pizza object
@@ -32,6 +44,12 @@ Pizza.prototype.showReceipt = function() {
 
   }
 }
+
+//for testing purposes
+// var pizza1 = new Pizza ("Large","Thin",["Ham","Sausage","Bacon"],[]);
+// var pizza2 = new Pizza ("Small","Crispy",["Ham","Bacon"],["Corn"]);
+// var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"]);
+// var pizza4 = new Pizza ("Large","Regular",[],[]);
 
 //UI LOGIC//
 $(document).ready(function(){
