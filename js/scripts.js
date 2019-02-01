@@ -60,18 +60,21 @@ Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
   return price;
 }
 
-// Order.prototype.createCard = function() {
-//   var myCard = '<div class="card" style="width: 18rem;"> \
-//       <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
-//       <div class="card-body"> \
-//         <h5 class="card-title">Pizza</h5> \
-//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the  content.</p> \
-//         <a href="#" class="btn btn-primary">Delete?</a> \
-//       </div> \
-//   </div>';
-//
-//   $(".card-display").html(myCard);
-// }
+//still volatile
+Order.prototype.createCard = function() {
+  var myCard = '<div class="card"> \
+      <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
+      <div class="card-body"> \
+        <h5 class="card-title">Pizza</h5> \
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the  content.</p> \
+        <a href="#" class="btn btn-primary">Delete?</a> \
+      </div> \
+  </div>';
+
+  $(".card-display").append(myCard);
+}
+
+
 
 
 //Displays information to user //use Order method instead
