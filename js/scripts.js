@@ -9,6 +9,14 @@ Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
 }
 
+Order.prototype.totalPrice = function(){
+  var total = 0
+  for (var i = 0; i<this.pizzas.length; i++) {
+    total += this.pizzas[i].cost
+  }
+  return total;
+}
+
 //Pizza creation logic
 function Pizza(size,crust,meat,veg) {
   this.size = size
@@ -59,13 +67,15 @@ Pizza.prototype.showReceipt = function() {
 }
 
 
-//for testing purposes
-// var pizza1 = new Pizza ("Large","Thin",["Ham","Sausage","Bacon"],[]);
-// var pizza2 = new Pizza ("Small","Crispy",["Ham","Bacon"],["Corn"]);
-// var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"]);
+// for testing purposes
+// var pizza1 = new Pizza ("Large","Thin",["Ham","Sausage","Bacon"],[],15);
+// var pizza2 = new Pizza ("Small","Crispy",["Ham","Bacon"],["Corn"],10);
+// var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"],5);
 // var pizza4 = new Pizza ("Large","Regular",[],[]);
 
 //UI LOGIC//
+var myOrder = new Order;
+
 $(document).ready(function(){
   $("form#pizzaForm").submit(function(event){
     event.preventDefault();
@@ -86,13 +96,10 @@ $(document).ready(function(){
     var myPizza = new Pizza(inputSize,inputCrust,inputMeat,inputVeg);
     var myPizzaPrice = myPizza.calculatePrice();
     console.log(myPizzaPrice);
-    myPizza.showReceipt();
 
-    //$(".myPizzaPrice").text(myPizzaPrice); simple way to show price
+    myOrder.addPizza(myPizza);
+    $(".myPizzaPrice").text(myOrder.totalPrice());
 
-   // $("input:checkbox[name=toppings]:checked").each(function(){
-   //    var inputToppings = $(this).val();
-   //    console.log(inputToppings); // to display later
-    // })
+
   })
 });
