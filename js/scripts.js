@@ -62,18 +62,21 @@ Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
 
 //still volatile
 Order.prototype.createCard = function() {
-  var myCard = '<div class="card"> \
+  var myCard = ""
+  for (var i = 0; i<this.pizzas.length; i++) {
+
+    myCard = '<div class="card"> \
       <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
       <div class="card-body"> \
-        <h5 class="card-title">Pizza</h5> \
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the  content.</p> \
+        <h5 class="card-title">Pizza ' + (i+1) + '</h5> \
+        <p class="card-text">Review your order: <br>' + this.pizzas[i].size + '</p> \
         <a href="#" class="btn btn-primary">Delete?</a> \
       </div> \
   </div>';
 
-  $(".card-display").append(myCard);
+  }
+$(".card-display").append(myCard);
 }
-
 
 
 
@@ -125,7 +128,7 @@ $(document).ready(function(){
     myOrder.addPizza(myPizza);
     myOrder.totalPrice();
     myOrder.showOrder();
-    //myOrder.createCard();
+    myOrder.createCard();
     // $(".myPizzaPrice").text(myOrder.totalPrice());
 
 
