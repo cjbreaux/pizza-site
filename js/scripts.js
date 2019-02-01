@@ -40,6 +40,9 @@ $(document).ready(function(){
       inputToppings.push($(this).val());
     });
     console.log(inputToppings);
+    var myPizza = new Pizza(inputSize,inputToppings);
+    var myPizzaPrice = myPizza.calculatePrice();
+    $(".myPizzaPrice").text(myPizzaPrice);
 
    // $("input:checkbox[name=toppings]:checked").each(function(){
    //    var inputToppings = $(this).val();
