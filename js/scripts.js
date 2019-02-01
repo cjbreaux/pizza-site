@@ -57,12 +57,21 @@ $(document).ready(function(){
     event.preventDefault();
     var inputSize = $("#pizzaSize option:selected").val();
     console.log(inputSize);
-    var inputToppings = []; $("input:checkbox[name=toppings]:checked").each(function(){
-      inputToppings.push($(this).val());
+    var inputCrust = $("#pizzaCrust option:selected").val();
+    console.log(inputCrust);
+    var inputMeat = [];
+    $("input:checkbox[name=meat]:checked").each(function(){
+      inputMeat.push($(this).val());
     });
-    console.log(inputToppings);
-    var myPizza = new Pizza(inputSize,inputToppings);
+    console.log(inputMeat);
+    var inputVeg = [];
+    $("input:checkbox[name=veg]:checked").each(function(){
+      inputVeg.push($(this).val());
+    });
+    console.log(inputVeg);
+    var myPizza = new Pizza(inputSize,inputCrust,inputMeat,inputVeg);
     var myPizzaPrice = myPizza.calculatePrice();
+    console.log(myPizzaPrice);
     myPizza.showReceipt();
 
     //$(".myPizzaPrice").text(myPizzaPrice); simple way to show price
