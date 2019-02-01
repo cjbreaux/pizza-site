@@ -17,11 +17,13 @@
     <div class="container">
       <h1 class="deisplay-1">Pizza My Heart</h1>
       <p>Welcome to Pizza My Heart Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSize">
         Order Online
       </button>
       <form id="pizzaForm">
+
         <!-- Modal to Select Pizza Size-->
         <div class="modal fade" id="modalSize" tabindex="-1">
           <div class="modal-dialog" role="document">
@@ -48,6 +50,7 @@
             </div>
           </div>
         </div>
+
         <!-- Modal to Select Pizza Crust-->
         <div class="modal fade" id="modalCrust" tabindex="-1">
           <div class="modal-dialog" role="document">
@@ -75,6 +78,7 @@
             </div>
           </div>
         </div>
+
         <!-- Modal to Select Meat Toppings-->
         <div class="modal fade" id="modalMeat" tabindex="-1">
           <div class="modal-dialog" role="document">
@@ -146,10 +150,6 @@
         </div>
 
 
-
-      
-
-
         <br>
         <button type="submit" name="submit" class="btn btn-danger">Submit Order</button>
       </form>
@@ -158,6 +158,10 @@
       <div class="receipt">
         <p>Thank you for your order of a <span class="myPizzaSize"></span> <span class="numOfToppings"></span> pizza<span class="myToppings"></span>. Your total is $<span class="myPizzaPrice"></span>.</p>
 
+      </div>
+
+      <div class="card-display">
+        
       </div>
 
     </div>

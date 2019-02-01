@@ -5,16 +5,23 @@ function Order() {
   this.pizzas = []
 }
 
+// Adds individual pizza object to Order array
 Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
 }
 
+// Calculates the cost of the entire order
 Order.prototype.totalPrice = function(){
   var total = 0
   for (var i = 0; i<this.pizzas.length; i++) {
     total += this.pizzas[i].cost
   }
+  this.totalCost = total;
   return total;
+}
+
+Order.prototype.showOrder = function (){
+  $(".myPizzaPrice").text(this.totalCost);
 }
 
 //Pizza creation logic
@@ -27,7 +34,7 @@ function Pizza(size,crust,meat,veg) {
 
 }
 
-//calculates the prize of a pizza
+//Calculates the prize of a pizza
 Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
   var price = 10;
   if (this.size === "Small") {
@@ -53,18 +60,33 @@ Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
   return price;
 }
 
-Pizza.prototype.showReceipt = function() {
+// Order.prototype.createCard = function() {
+//   var myCard = '<div class="card" style="width: 18rem;"> \
+//       <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
+//       <div class="card-body"> \
+//         <h5 class="card-title">Pizza</h5> \
+//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the  content.</p> \
+//         <a href="#" class="btn btn-primary">Delete?</a> \
+//       </div> \
+//   </div>';
+//
+//   $(".card-display").html(myCard);
+// }
 
-  $(".myPizzaPrice").text(this.cost);
-  $(".myPizzaSize").text(this.size);
 
-
-
-  if (this.meat.length > 0 || this.veg.length > 0) {
-    $(".numOfToppings").text(this.meat.length + this.veg.length + " topping");
-    // $(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
-  }
-}
+//Displays information to user //use Order method instead
+// Pizza.prototype.showReceipt = function() {
+//
+//   $(".myPizzaPrice").text(this.cost);
+//   $(".myPizzaSize").text(this.size);
+//
+//
+//
+//   if (this.meat.length > 0 || this.veg.length > 0) {
+//     $(".numOfToppings").text(this.meat.length + this.veg.length + " topping");
+//     // $(".myToppings").text(" with " + this.toppings.join(", ")); //sort of working but need a better method to show info
+//   }
+// }
 
 
 // for testing purposes
@@ -98,7 +120,10 @@ $(document).ready(function(){
     console.log(myPizzaPrice);
 
     myOrder.addPizza(myPizza);
-    $(".myPizzaPrice").text(myOrder.totalPrice());
+    myOrder.totalPrice();
+    myOrder.showOrder();
+    //myOrder.createCard();
+    // $(".myPizzaPrice").text(myOrder.totalPrice());
 
 
   })
