@@ -20,7 +20,7 @@
 
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSize">
-        Order Online
+        Order Here
       </button>
       <form id="pizzaForm">
 
@@ -108,7 +108,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modalVeg">Continue</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#modalVeg" id="vegButton">Continue</button>
               </div>
             </div>
           </div>
@@ -143,27 +143,32 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+                  <button type="submit" name="submit" class="btn btn-danger"  id="submit">Submit Order</button>
+
+
+                <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" >Continue</button> -->
+
               </div>
             </div>
           </div>
         </div>
 
 
-        <br>
-        <button type="submit" name="submit" class="btn btn-danger">Submit Order</button>
+        <!-- <br>
+        <button type="submit" name="submit" class="btn btn-danger" id="submit">Submit Order</button> -->
       </form>
 
-      <!-- display the receipt here -->
-      <div class="receipt">
-        <p>Thank you for your order of a <span class="myPizzaSize"></span> <span class="numOfToppings"></span> pizza<span class="myToppings"></span>. Your total is $<span class="myPizzaPrice"></span>.</p>
-
-      </div>
 
       <div class="card-display card-group">
 
       </div>
 
+      <!-- display the receipt here -->
+      <div class="receipt">
+        <p>Thank you for your order! Your total is $<span class="myPizzaPrice"></span>.</p>
+        <p>If you would like to order another pizza, please click the "Order Here" button.</p>
+
+      </div>
 
     </div>
   </body>

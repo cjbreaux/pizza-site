@@ -40,7 +40,7 @@ Order.prototype.createCard = function() {
     '<br> Crust: ' + this.pizzas[i].crust +
     '<br> Toppings: ' + this.pizzas[i].toppings +
     '<br> Price: $' + this.pizzas[i].cost + '</p> \
-    <a href="#" class="btn btn-primary">Delete?</a> \
+    <a href="#" class="btn btn-primary">Remove</a> \
     </div> \
     </div>';
 
@@ -153,6 +153,8 @@ $(document).ready(function(){
     var myPizza = new Pizza(inputSize,inputCrust,inputMeat,inputVeg);
     var myPizzaPrice = myPizza.calculatePrice();
     console.log(myPizzaPrice);
+    $("#modalVeg .close").click();
+    $(".receipt").show();
 
     myPizza.combo();
     myOrder.addPizza(myPizza);
@@ -163,4 +165,7 @@ $(document).ready(function(){
 
 
   })
+  // $("#lastButton").click(function(){
+  //   $("#submit").show();
+  // })
 });
