@@ -9,7 +9,7 @@
 This website will mimic some of the functionality of an online order-form for a pizza parlor. Users will be able to select a size, crust and a variety of toppings. The site will allow for multiple pizzas to be ordered. A separate display field will be created for each pizza the user creates. The site will calculate the price of the pizzas depending which options the user selects. The full specification list can be found below.
 
 You can view the page by following this link:
-https://cjbreaux.github.io/pizza-site
+https://cjbreaux.github.io/pizza-site/
 
 ## Specifications
 1. Program takes in user input from four fields displayed as modals.
