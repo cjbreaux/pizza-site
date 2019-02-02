@@ -24,6 +24,38 @@ Order.prototype.showOrder = function (){
   $(".myPizzaPrice").text(this.totalCost);
 }
 
+
+
+
+//still volatile
+Order.prototype.createCard = function() {
+  var myCard = ""
+  for (var i = 0; i<this.pizzas.length; i++) {
+
+    myCard = '<div class="card"> \
+    <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
+    <div class="card-body"> \
+    <h5 class="card-title">Pizza ' + (i+1) + '</h5> \
+    <p class="card-text">Please review your order <br>' + 'Size: ' + this.pizzas[i].size +
+    '<br> Crust: ' + this.pizzas[i].crust +
+    '<br> Toppings: ' + this.pizzas[i].toppings +
+    '<br> Price: $' + this.pizzas[i].cost + '</p> \
+    <a href="#" class="btn btn-primary">Delete?</a> \
+    </div> \
+    </div>';
+
+  }
+  $(".card-display").append(myCard);
+}
+
+
+
+
+
+
+
+
+
 //Pizza creation logic
 function Pizza(size,crust,meat,veg) {
   this.size = size
@@ -60,22 +92,19 @@ Pizza.prototype.calculatePrice = function(size,crust,meat,veg) {
   return price;
 }
 
-//still volatile
-Order.prototype.createCard = function() {
-  var myCard = ""
-  for (var i = 0; i<this.pizzas.length; i++) {
-
-    myCard = '<div class="card"> \
-      <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
-      <div class="card-body"> \
-        <h5 class="card-title">Pizza ' + (i+1) + '</h5> \
-        <p class="card-text">Review your order: <br>' + this.pizzas[i].size + '</p> \
-        <a href="#" class="btn btn-primary">Delete?</a> \
-      </div> \
-  </div>';
-
-  }
-$(".card-display").append(myCard);
+Pizza.prototype.combo = function () {
+  var toppings = []
+  var output = ""
+  this.meat.forEach(function(meat){
+    toppings.push(meat)
+  });
+  this.veg.forEach(function(veg){
+    toppings.push(veg)
+  });
+  output = toppings.join(", ");
+  this.toppings = output
+  console.log(output);
+  return output;
 }
 
 
@@ -96,10 +125,10 @@ $(".card-display").append(myCard);
 
 
 // for testing purposes
-// var pizza1 = new Pizza ("Large","Thin",["Ham","Sausage","Bacon"],[],15);
-// var pizza2 = new Pizza ("Small","Crispy",["Ham","Bacon"],["Corn"],10);
-// var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"],5);
-// var pizza4 = new Pizza ("Large","Regular",[],[]);
+var pizza1 = new Pizza ("Large","Thin",["Ham","Sausage","Bacon"],[],15);
+var pizza2 = new Pizza ("Small","Crispy",["Ham","Bacon"],["Corn"],10);
+var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"],5);
+var pizza4 = new Pizza ("Large","Regular",[],[]);
 
 //UI LOGIC//
 var myOrder = new Order;
@@ -125,6 +154,7 @@ $(document).ready(function(){
     var myPizzaPrice = myPizza.calculatePrice();
     console.log(myPizzaPrice);
 
+    myPizza.combo();
     myOrder.addPizza(myPizza);
     myOrder.totalPrice();
     myOrder.showOrder();
