@@ -61,7 +61,7 @@ Order.prototype.createCard = function() {
     `<br> Crust: ` + this.pizzas[i].crust +
     `<br> Toppings: ` + this.pizzas[i].toppings +
     `<br> Price: $` + this.pizzas[i].cost + `</p>
-    <a href="#" class="btn btn-primary">Remove</a>
+    <a href="#" class="btn btn-primary" id="del`+ this.pizzas[i].id + `">Remove</a>
     </div>
     </div>`;
 
@@ -151,6 +151,12 @@ var pizza2 = new Pizza ("Small","Crispy",["Ham","Bacon"],["Corn"],10);
 var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"],5);
 var pizza4 = new Pizza ("Large","Regular",[],[]);
 
+var attachEventHandlers = function() {
+  $(".remove").on("click", function() {
+    alert("testing clicks")
+  })
+}
+
 //UI LOGIC//
 
 
@@ -184,6 +190,7 @@ $(document).ready(function(){
     myOrder.totalPrice();
     myOrder.showOrder();
     myOrder.createCard();
+
     // $(".myPizzaPrice").text(myOrder.totalPrice());
 
 
