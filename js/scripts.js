@@ -3,10 +3,18 @@
 //Ordering Logic to keep track of multiple pizzas
 function Order() {
   this.pizzas = []
+  this.pizzaId = 0
+}
+
+//Adds Unique ID to each pizza
+Order.prototype.assignId = function (pizza) {
+  this.pizzaId += 1;
+  pizza.id = this.pizzaId;
 }
 
 // Adds individual pizza object to Order array
 Order.prototype.addPizza = function(pizza) {
+  this.assignId(pizza); //assigns unique ID before adding to array
   this.pizzas.push(pizza);
 }
 
@@ -34,7 +42,7 @@ Order.prototype.createCard = function() {
     myCard = `<div class="card col-3">
     <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap">
     <div class="card-body">
-    <h5 class="card-title">Pizza ` + (i+1) + `</h5>
+    <h5 class="card-title">Pizza ` + (this.pizzas[i].id) + `</h5>
     <p class="card-text">Please review your order <br>` + `Size: ` + this.pizzas[i].size +
     `<br> Crust: ` + this.pizzas[i].crust +
     `<br> Toppings: ` + this.pizzas[i].toppings +
