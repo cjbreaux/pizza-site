@@ -31,7 +31,7 @@ Order.prototype.showOrder = function (){
 Order.prototype.createCard = function() {
   var myCard = ""
   for (var i = 0; i<this.pizzas.length; i++) {
-    myCard = `<div class="card">
+    myCard = `<div class="card col-3">
     <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap">
     <div class="card-body">
     <h5 class="card-title">Pizza ` + (i+1) + `</h5>
