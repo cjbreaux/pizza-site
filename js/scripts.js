@@ -31,18 +31,17 @@ Order.prototype.showOrder = function (){
 Order.prototype.createCard = function() {
   var myCard = ""
   for (var i = 0; i<this.pizzas.length; i++) {
-
-    myCard = '<div class="card"> \
-    <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap"> \
-    <div class="card-body"> \
-    <h5 class="card-title">Pizza ' + (i+1) + '</h5> \
-    <p class="card-text">Please review your order <br>' + 'Size: ' + this.pizzas[i].size +
-    '<br> Crust: ' + this.pizzas[i].crust +
-    '<br> Toppings: ' + this.pizzas[i].toppings +
-    '<br> Price: $' + this.pizzas[i].cost + '</p> \
-    <a href="#" class="btn btn-primary">Remove</a> \
-    </div> \
-    </div>';
+    myCard = `<div class="card">
+    <img class="card-img-top" src="img/pizza.jpg" alt="Card image cap">
+    <div class="card-body">
+    <h5 class="card-title">Pizza ` + (i+1) + `</h5>
+    <p class="card-text">Please review your order <br>` + `Size: ` + this.pizzas[i].size +
+    `<br> Crust: ` + this.pizzas[i].crust +
+    `<br> Toppings: ` + this.pizzas[i].toppings +
+    `<br> Price: $` + this.pizzas[i].cost + `</p>
+    <a href="#" class="btn btn-primary">Remove</a>
+    </div>
+    </div>`;
 
   }
   $(".card-display").append(myCard);
