@@ -12,6 +12,20 @@ Order.prototype.assignId = function (pizza) {
   pizza.id = this.pizzaId;
 }
 
+//test remove pizza
+Order.prototype.deletePizza = function(id) {
+  for(var i = 0; i < this.pizzas.length; i++) {
+    if (this.pizzas[i]) {
+      if (this.pizzas[i].id == id) {
+        this.pizzas.splice( this.pizzas[i],1); //use splice to reindex array but need to total the price again
+        this.totalPrice();
+        return true;
+      }
+    }
+  };
+  return false;
+}
+
 // Adds individual pizza object to Order array
 Order.prototype.addPizza = function(pizza) {
   this.assignId(pizza); //assigns unique ID before adding to array
@@ -138,6 +152,8 @@ var pizza3 = new Pizza ("Medium","Deep-Dish",["Ham"],["Olives","Onions"],5);
 var pizza4 = new Pizza ("Large","Regular",[],[]);
 
 //UI LOGIC//
+
+
 var myOrder = new Order;
 
 $(document).ready(function(){
